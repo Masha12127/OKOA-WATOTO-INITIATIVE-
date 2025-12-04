@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OKOA WATOTO INITIATIVE</title>
+  <meta name="description" content="Empowering children by protecting, mentoring, and nurturing them to grow safely, learn fully, and reach their full potential." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="logo.png" />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="Okoa Watoto Initiative logo" class="logo" />
+        <div>
+          <h1 class="site-title">OKOA WATOTO INITIATIVE</h1>
+          <p class="motto">Empowering Children · Shaping Future</p>
+        </div>
+      </div>
+
+      <button id="navToggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#report">Report / Forms</a></li>
+          <li><a href="#get-involved">Get Involved</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>Protecting, Mentoring, Nurturing — For Every Child.</h2>
+          <p class="lead">We empower children to grow safely, learn fully, and reach their full potential in communities that value them.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#report">Report a Missing Child</a>
+            <a class="btn" href="#programs">Our Programs</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <img src="logo.png" alt="" class="hero-logo" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h3>Mission</h3>
+      <p><strong>Empowering children by protecting, mentoring, and nurturing them to grow safely, learn fully, and reach their full potential.</strong></p>
+
+      <h3>Vision</h3>
+      <p><strong>A community where every child is safe, valued, and empowered to thrive and succeed.</strong></p>
+    </section>
+
+    <section id="programs" class="container programs">
+      <h3>Programs</h3>
+      <p>Okoa Watoto serves community children through the following 8 programs:</p>
+      <div class="program-grid" role="list">
+        <article role="listitem" class="program">
+          <h4>1. Talents Hub Program</h4>
+          <p>Identify, nurture and showcase children's talents — arts, sports and academics.</p>
+        </article>
+        <article role="listitem" class="program">
+          <h4>2. Mentorship Program</h4>
+          <p>One-on-one mentoring to build skills, confidence and guidance.</p>
+        </article>
+        <article role="listitem" class="program">
+          <h4>3. Positive Parenting</h4>
+          <p>Workshops and support for caregivers to foster healthy family environments.</p>
+        </article>
+        <article role="listitem" class="program">
+          <h4>4. Child Tracing Program</h4>
+          <p>Missing Child / Lost & Found — rapid community tracing and reunification support.</p>
+        </article>
+        <article role="listitem" class="program">
+          <h4>5. Awareness & Advocacy</h4>
+          <p>Community campaigns on child rights, protection and wellbeing.</p>
+        </article>
+        <article role="listitem" class="program">
+          <h4>6. Back To School Program</h4>
+          <p>Supplies, fees and enrollment support so children can learn fully.</p>
+        </article>
+        <article role="listitem" class="program">
+          <h4>7. Health & Nutrition</h4>
+          <p>Health checks, nutrition education and basic support for vulnerable children.</p>
+        </article>
+        <article role="listitem" class="program">
+          <h4>8. Child Protection Referrals</h4>
+          <p>Linking families and children to social services, legal support and shelters.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Report & Forms -->
+    <section id="report" class="container forms">
+      <h3>Report & Anonymous Forms</h3>
+      <p>Use the anonymous reporting form for concerns, tips, or missing-child reports. Data is stored locally in your browser for privacy; you can download submissions as CSV or copy a report to paste into an email/WhatsApp.</p>
+
+      <div class="forms-grid">
+        <!-- Generic Anonymous Form -->
+        <form id="anonForm" class="card form-card" aria-labelledby="anonFormTitle">
+          <h4 id="anonFormTitle">Anonymous Tip / Feedback</h4>
+
+          <label for="incidentType">Type</label>
+          <select id="incidentType" name="incidentType" required>
+            <option value="">Choose...</option>
+            <option>Concern / Abuse</option>
+            <option>Feedback</option>
+            <option>Volunteer interest</option>
+            <option>Other</option>
+          </select>
+
+          <label for="details">Details (what happened / info)</label>
+          <textarea id="details" name="details" rows="5" placeholder="Describe the issue or info..." required></textarea>
+
+          <label>
+            <input type="checkbox" id="anonymousToggle" checked />
+            Submit anonymously (no name/email saved)
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Report</button>
+            <button type="button" id="downloadReports" class="btn">Download CSV</button>
+            <button type="button" id="clearReports" class="btn btn-ghost">Clear All</button>
+          </div>
+
+          <div id="anonStatus" role="status" aria-live="polite" class="form-status"></div>
+        </form>
+
+        <!-- Missing Child Report -->
+        <form id="missingForm" class="card form-card" aria-labelledby="missingFormTitle">
+          <h4 id="missingFormTitle">Missing Child Report (Community Tracing)</h4>
+
+          <label for="childName">Child's Name (or description)</label>
+          <input id="childName" name="childName" type="text" placeholder="Name or description" required />
+
+          <label for="age">Age (approx.)</label>
+          <input id="age" name="age" type="text" placeholder="e.g. 6, 3-5" />
+
+          <label for="lastSeen">Last seen (where & when)</label>
+          <input id="lastSeen" name="lastSeen" type="text" placeholder="Location & time" required />
+
+          <label for="photoUrl">Photo URL (optional)</label>
+          <input id="photoUrl" name="photoUrl" type="url" placeholder="https://..." />
+
+          <label for="contactInfo">Contact info (optional) — or leave blank for anonymous</label>
+          <input id="contactInfo" name="contactInfo" type="text" placeholder="Phone or email" />
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit Report</button>
+            <button type="button" id="copyReport" class="btn">Copy for WhatsApp / Email</button>
+          </div>
+
+          <div id="missingStatus" role="status" aria-live="polite" class="form-status"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="get-involved" class="container get-involved">
+      <h3>Get Involved</h3>
+      <p>Volunteer, donate, or partner with us. Every little bit helps a child thrive.</p>
+
+      <div class="cta-cards">
+        <div class="card">
+          <h4>Volunteer</h4>
+          <p>Mentors, coaches, community organizers — sign up to help run programs and hubs.</p>
+          <a class="btn" href="mailto:okoawatotoinitiative@gmail.com?subject=Volunteer%20Interest">Email Us</a>
+        </div>
+
+        <div class="card">
+          <h4>Donate Supplies</h4>
+          <p>Stationery, uniforms, hygiene kits — we distribute to children in need.</p>
+          <a class="btn" href="mailto:okoawatotoinitiative@gmail.com?subject=Donation%20Inquiry">Contact Donations</a>
+        </div>
+
+        <div class="card">
+          <h4>Partner</h4>
+          <p>Organizations and foundations: collaborate on programs & outreach.</p>
+          <a class="btn" href="mailto:partners@okoawatotoinitiative@gmail.com?subject=Partnership%20Inquiry">Start a Chat</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="translate" class="container translate">
+      <h3>Translate Site</h3>
+      <div id="google_translate_element"></div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3>Contact & Social</h3>
+      <p>Quick links to reach us:</p>
+      <ul class="contact-list">
+        <li><a href="mailto:okoawatotoinitiative@gmail.com">info@okoawatotoinitiative@gmail.com</a></li>
+        <li><a href="https://www.facebook.com/share/17YYiGaBnk/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        <li><a href="https://wa.me/254745644734" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      </ul>
+
+      <div class="social-row" aria-hidden="false">
+        <a class="social-btn" href="https://wa.me/254745644734" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a>
+        <a class="social-btn" href="https://www.facebook.com/share/17YYiGaBnk/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook">Facebook</a>
+        <a class="social-btn" href="mailto:okoawatotoinitiative@gmail.com" aria-label="Email us">Email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> OKOA WATOTO INITIATIVE — All rights reserved.</p>
+      <p class="small">Designed for community impact. Logo courtesy of contributor.</p>
+    </div>
+  </footer>
+
+  <!-- Floating quick actions -->
+  <div class="floating-actions" aria-hidden="false">
+    <a class="fab" href="https://wa.me/254745644734" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <!-- simple SVG phone -->
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5l-4-1a2 2 0 0 0-2 .5L12 5.5a2 2 0 0 0-.5 2L12 10l-1 1 2.5 3.5C15.8 15 17 13 18 11l1-1 1 1 1-1-1-6a2 2 0 0 0-1.5-1.5z"/></svg>
+    </a>
+    <a class="fab" href="mailto:okoawatotoinitiative@gmail.com" aria-label="Email">✉️</a>
+  </div>
+
+  <script src="scripts.js" defer></script>
+
+  <!-- Google Translate widget -->
+  <script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+  }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

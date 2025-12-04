@@ -1,0 +1,139 @@
+:root{
+  --brand:#f46b1a; /* orange from your logo */
+  --dark:#111;
+  --muted:#666;
+  --bg:#fff;
+  --radius:12px;
+  --gap:1rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+/* Basic reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size:16px;
+}
+
+/* utility */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:1rem;
+}
+
+/* Skip link */
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:1rem;
+  top:1rem;
+  width:auto;
+  height:auto;
+  padding:.5rem .75rem;
+  background:#000;
+  color:#fff;
+  z-index:1000;
+}
+
+/* Header */
+.site-header{
+  border-bottom:1px solid #eee;
+  background:linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter: blur(6px);
+}
+.header-inner{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:.75rem 0}
+.brand{display:flex;gap:.75rem;align-items:center}
+.logo{width:64px;height:64px;object-fit:contain;border-radius:8px}
+.site-title{margin:0;font-size:1.05rem;letter-spacing:.04em}
+.motto{margin:0;font-size:.8rem;color:var(--muted)}
+
+/* nav */
+.nav-toggle{display:none;background:none;border:0;font-size:1.4rem;padding:.25rem}
+.primary-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.5rem;align-items:center}
+.primary-nav a{display:inline-block;padding:.4rem .6rem;border-radius:8px;text-decoration:none;color:var(--dark);font-weight:600}
+.primary-nav a:hover, .primary-nav a:focus{background:rgba(244,107,26,.08);outline:none}
+
+/* Hero */
+.hero{padding:2rem 0;background:linear-gradient(180deg,#fff,#fff)}
+.hero-grid{display:grid;grid-template-columns:1fr 220px;gap:1rem;align-items:center}
+.hero-text h2{margin:.2rem 0 0;font-size:1.6rem}
+.lead{color:var(--muted);margin:.5rem 0 1rem}
+.hero-card{display:flex;align-items:center;justify-content:center}
+.hero-logo{width:180px;height:180px;object-fit:contain}
+
+/* buttons */
+.btn{display:inline-block;padding:.6rem .9rem;border-radius:10px;border:1px solid rgba(0,0,0,.06);text-decoration:none;background:transparent;font-weight:600}
+.btn-primary{background:var(--brand);color:white;border:0}
+.btn-ghost{background:transparent;border:1px dashed #ccc}
+
+/* content sections */
+.about, .programs, .forms, .get-involved, .contact{padding:1.5rem 0}
+.program-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
+.program{background:#fff;border-radius:12px;padding:1rem;box-shadow:0 6px 18px rgba(0,0,0,.04)}
+.program h4{margin:.25rem 0}
+
+/* forms */
+.forms-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.card{background:#fff;border-radius:var(--radius);padding:1rem;box-shadow:0 8px 20px rgba(12,12,12,.06)}
+.form-card label{display:block;margin-top:.5rem;font-weight:600}
+.form-card input[type="text"], .form-card input[type="url"], .form-card select, .form-card textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid #e5e5e5;margin-top:.25rem}
+.form-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem}
+.form-status{margin-top:.5rem;color:green;font-weight:700}
+
+/* get-involved */
+.cta-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+
+/* contact */
+.contact-list{list-style:none;padding:0;display:flex;gap:1rem}
+.social-row{margin-top:.75rem;display:flex;gap:.5rem}
+.social-btn{display:inline-block;padding:.5rem .75rem;border-radius:8px;background:#f3f3f3;text-decoration:none}
+
+/* footer */
+.site-footer{border-top:1px solid #eee;margin-top:2rem;padding:1rem 0;background:#fff}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.small{color:var(--muted);font-size:.85rem}
+
+/* floating actions */
+.floating-actions{position:fixed;right:1rem;bottom:1rem;display:flex;flex-direction:column;gap:.5rem;z-index:60}
+.fab{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--brand);color:#fff;text-decoration:none;box-shadow:0 8px 18px rgba(0,0,0,.12);font-weight:700}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:.75rem}
+  .program-grid{grid-template-columns:1fr}
+  .forms-grid{grid-template-columns:1fr}
+  .cta-cards{grid-template-columns:1fr}
+  .primary-nav{position:absolute;right:1rem;top:74px;background:#fff;border-radius:10px;padding:.5rem;display:none;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+  .nav-toggle{display:inline-block}
+  .header-inner{align-items:center}
+  .logo{width:56px;height:56px}
+}
+
+/* show nav when open (JS toggles class) */
+
+.primary-nav.open {
+  transform: translateX(0%);
+}
+
+/* focus styles */
+:focus{outline:3px solid rgba(244,107,26,.2);outline-offset:3px}
+
+/* small tweaks */
+.form-card input:focus, .form-card textarea:focus, .form-card select:focus{border-color:var(--brand)}
